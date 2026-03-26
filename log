@@ -74,3 +74,15 @@ list.c:112:1: error: control reaches end of non-void function [-Werror=return-ty
       | ^
 cc1: all warnings being treated as errors
 cf97779
+Thu Mar 26 07:59:12 PM UTC 2026: 
+ list.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:97:24: error: ‘siguente’ undeclared (first use in this function); did you mean ‘siguiente’?
+   97 |         list -> head = siguente;
+      |                        ^~~~~~~~
+      |                        siguiente
+list.c:97:24: note: each undeclared identifier is reported only once for each function it appears in
+29ccd11
