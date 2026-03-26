@@ -101,7 +101,7 @@ void * popCurrent(List * list) {
     }
     else if(siguiente == NULL){
         borrar->prev->next = NULL;
-        list->tail->prev = NULL;
+        list->tail = borrar->prev;
         free(borrar);
         return dato;   
     }
