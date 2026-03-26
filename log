@@ -102,3 +102,9 @@ list.c:104:15: error: ‘Node’ has no member named ‘tail’
   104 |         borrar->tail->prev = NULL;
       |               ^~
 9e2d1d8
+Thu Mar 26 08:03:48 PM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|6
+total_score: 0/60
+2b99559
