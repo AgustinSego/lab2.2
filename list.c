@@ -28,84 +28,51 @@ Node * createNode(void * data) {
     return new;
 }
 
-// 1. Crea e inicializa una lista vacía
+// 1. Programe la función List* createList(), la cual retorna el puntero del tipo de dato List con sus valores inicializados en NULL.
+// Recuerda reservar memoria al puntero usando malloc o calloc.
+
 List * createList() {
-    List * list = (List *)malloc(sizeof(List));
-    assert(list != NULL);
-    list->head = NULL;
-    list->tail = NULL;
-    list->current = NULL;
-    return list;
+     return NULL;
 }
 
-// 2. firstList: retorna el dato del primer nodo y actualiza current al head
-//    nextList: retorna el dato del nodo siguiente al current y avanza current
+// 2. Programe las funciones void * firstList(List * list) y void * nextList(List * list).
+//   - La primera retorna el dato del primer nodo de la lista (head) y actualiza el current para que apunte a ese nodo.
+//   - La segunda función retorna el dato del nodo a continuación del current y actualiza el current para que apunte a ese nodo.
 
 void * firstList(List * list) {
-    if (list->head == NULL) return NULL;
-    list->current = list->head;
-    return list->current->data;
+    return NULL;
 }
 
 void * nextList(List * list) {
-    if (list->current == NULL) return NULL;
-    if (list->current->next == NULL) return NULL;
-    list->current = list->current->next;
-    return list->current->data;
+    return NULL;
 }
 
-// 3. lastList: retorna el dato del último nodo y actualiza current al tail
-//    prevList: retorna el dato del nodo anterior al current y retrocede current
+// 3. Programe las funciones void * lastList(List * list) y void * prevList(List * list).
+//   - La primera retorna el dato del último elemento en la lista y actualiza el current al nodo correspondiente.
+//   - La segunda función retorna el dato del nodo anterior a current y actualiza el current para que apunte a ese nodo.
 
 void * lastList(List * list) {
-    if (list->tail == NULL) return NULL;
-    list->current = list->tail;
-    return list->current->data;
+    return NULL;
 }
 
 void * prevList(List * list) {
-    if (list->current == NULL) return NULL;
-    if (list->current->prev == NULL) return NULL;
-    list->current = list->current->prev;
-    return list->current->data;
+    return NULL;
 }
 
-// 4. pushFront: agrega un dato al comienzo de la lista
+// 4. Programe la función void pushFront(List * list, void * data), la cual agrega un dato al comienzo de la lista.
+// Puede utilizar la función Node* createNode(void * data) la cual crea, incializa y retorna un nodo con el dato correspondiente.
 
 void pushFront(List * list, void * data) {
-    Node * new = createNode(data);
-    if (list->head == NULL) {
-        list->head = new;
-        list->tail = new;
-    } else {
-        new->next = list->head;
-        list->head->prev = new;
-        list->head = new;
-    }
 }
 
 void pushBack(List * list, void * data) {
     list->current = list->tail;
-    pushCurrent(list, data);
+    pushCurrent(list,data);
 }
 
-// 5. pushCurrent: agrega un dato a continuación del nodo apuntado por current
+// 5. Programe la función void pushCurrent(List * list, void* data), la cual agrega un dato a continuación del nodo apuntado por list->current.
 
 void pushCurrent(List * list, void * data) {
-    Node * new = createNode(data);
-    if (list->current == NULL) {
-        list->head = new;
-        list->tail = new;
-    } else {
-        new->next = list->current->next;
-        new->prev = list->current;
-        if (list->current->next != NULL) {
-            list->current->next->prev = new;
-        } else {
-            list->tail = new;
-        }
-        list->current->next = new;
-    }
 }
 
 void * popFront(List * list) {
@@ -118,31 +85,30 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-// 6. popCurrent: elimina el nodo en la posición current y retorna su dato
-//    El current queda apuntando al nodo siguiente del eliminado
+// 6. Programe la función void* popCurrent(List * list), la cual elimina el nodo que está en la posición del current de la lista enlazada, y además retorna el dato del nodo eliminado.
+// Nota: El current debe quedar apuntando al nodo siguiente del eliminado.
 
 void * popCurrent(List * list) {
-    if (list->current == NULL) return NULL;
-
-    Node * toRemove = list->current;
-    void * data = toRemove->data;
-
-    if (toRemove->prev != NULL) {
-        toRemove->prev->next = toRemove->next;
-    } else {
-        list->head = toRemove->next;
+    nodo* borrar = list -> current;
+    nodo* anterior = list -> current-> prev; 
+    nodo* siguiente = list -> current -> next;
+    void* dato = list-> current -> data; 
+    if(anterior ==  NULL){
+        list -> head = siguiente;
+        free(borrar);
+        return dato;
     }
-
-    if (toRemove->next != NULL) {
-        toRemove->next->prev = toRemove->prev;
-    } else {
-        list->tail = toRemove->prev;
+    else if(siguiente == NULL){
+        borrar->prev->next = NULL;
+        free(borrar);
+        return dato;   
     }
-
-    list->current = toRemove->next;
-
-    free(toRemove);
-    return data;
+    else{
+        siguente->prev = anterior;
+        anterior->next = siguiente;
+        free(borrar);
+        return dato;
+    }
 }
 
 void cleanList(List * list) {

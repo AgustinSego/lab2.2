@@ -1,0 +1,39 @@
+Thu Mar 26 07:47:46 PM UTC 2026: 
+ list.c | 110 +++++++++++++++++++++++------------------------------------------
+ 1 file changed, 38 insertions(+), 72 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:92:5: error: unknown type name ‘nodo’
+   92 |     nodo* borrar = list -> current;
+      |     ^~~~
+list.c:92:20: error: initialization of ‘int *’ from incompatible pointer type ‘Node *’ [-Wincompatible-pointer-types]
+   92 |     nodo* borrar = list -> current;
+      |                    ^~~~
+list.c:93:5: error: unknown type name ‘nodo’
+   93 |     nodo* anterior = list -> current-> prev;
+      |     ^~~~
+list.c:93:22: error: initialization of ‘int *’ from incompatible pointer type ‘Node *’ [-Wincompatible-pointer-types]
+   93 |     nodo* anterior = list -> current-> prev;
+      |                      ^~~~
+list.c:94:5: error: unknown type name ‘nodo’
+   94 |     nodo* siguiente = list -> current -> next;
+      |     ^~~~
+list.c:94:23: error: initialization of ‘int *’ from incompatible pointer type ‘Node *’ [-Wincompatible-pointer-types]
+   94 |     nodo* siguiente = list -> current -> next;
+      |                       ^~~~
+list.c:97:22: error: assignment to ‘Node *’ from incompatible pointer type ‘int *’ [-Wincompatible-pointer-types]
+   97 |         list -> head = siguiente;
+      |                      ^
+list.c:102:15: error: request for member ‘prev’ in something not a structure or union
+  102 |         borrar->prev->next = NULL;
+      |               ^~
+list.c:107:9: error: ‘siguente’ undeclared (first use in this function); did you mean ‘siguiente’?
+  107 |         siguente->prev = anterior;
+      |         ^~~~~~~~
+      |         siguiente
+list.c:107:9: note: each undeclared identifier is reported only once for each function it appears in
+list.c:108:17: error: request for member ‘next’ in something not a structure or union
+  108 |         anterior->next = siguiente;
+      |                 ^~
+3180670
