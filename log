@@ -37,3 +37,15 @@ list.c:108:17: error: request for member ‘next’ in something not a structure
   108 |         anterior->next = siguiente;
       |                 ^~
 3180670
+Thu Mar 26 07:48:47 PM UTC 2026: 
+ list.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:107:9: error: ‘siguente’ undeclared (first use in this function); did you mean ‘siguiente’?
+  107 |         siguente->prev = anterior;
+      |         ^~~~~~~~
+      |         siguiente
+list.c:107:9: note: each undeclared identifier is reported only once for each function it appears in
+ae47143
