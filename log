@@ -49,3 +49,9 @@ list.c:107:9: error: ‘siguente’ undeclared (first use in this function); did
       |         siguiente
 list.c:107:9: note: each undeclared identifier is reported only once for each function it appears in
 ae47143
+Thu Mar 26 07:49:09 PM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|6
+total_score: 0/60
+f5e99be

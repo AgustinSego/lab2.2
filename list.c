@@ -104,7 +104,7 @@ void * popCurrent(List * list) {
         return dato;   
     }
     else{
-        siguente->prev = anterior;
+        siguiente->prev = anterior;
         anterior->next = siguiente;
         free(borrar);
         return dato;
