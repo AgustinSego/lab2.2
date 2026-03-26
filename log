@@ -55,3 +55,22 @@ Thu Mar 26 07:49:09 PM UTC 2026:
  tests:  0|6
 total_score: 0/60
 f5e99be
+Thu Mar 26 07:54:39 PM UTC 2026: 
+ list.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:101:13: error: ‘siguiente’ undeclared (first use in this function); did you mean ‘sigevent’?
+  101 |     else if(siguiente == NULL){
+      |             ^~~~~~~~~
+      |             sigevent
+list.c:101:13: note: each undeclared identifier is reported only once for each function it appears in
+list.c:107:27: error: ‘anterior’ undeclared (first use in this function)
+  107 |         siguiente->prev = anterior;
+      |                           ^~~~~~~~
+list.c:112:1: error: control reaches end of non-void function [-Werror=return-type]
+  112 | }
+      | ^
+cc1: all warnings being treated as errors
+cf97779

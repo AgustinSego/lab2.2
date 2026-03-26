@@ -90,11 +90,11 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
     Node* borrar = list -> current;
-    Node* anterior = list -> current-> prev; 
-    Node* siguiente = list -> current -> next;
+    //Node* anterior = list -> current-> prev; 
+    //Node* siguiente = list -> current -> next;
     void* dato = list-> current -> data; 
-    if(anterior ==  NULL){
-        list -> head = siguiente;
+    if(borrar->prev ==  NULL){
+        list -> head = borrar->next;
         free(borrar);
         return dato;
     }
