@@ -92,3 +92,13 @@ Thu Mar 26 08:01:07 PM UTC 2026:
  tests:  0|6
 total_score: 0/60
 60ed6b2
+Thu Mar 26 08:03:23 PM UTC 2026: 
+ list.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:104:15: error: ‘Node’ has no member named ‘tail’
+  104 |         borrar->tail->prev = NULL;
+      |               ^~
+9e2d1d8
