@@ -94,7 +94,8 @@ void * popCurrent(List * list) {
     Node* siguiente = list -> current -> next;
     void* dato = list-> current -> data; 
     if(anterior ==  NULL){
-        list -> head = siguente;
+        list -> head = siguiente;
+        list-> head->prev = NULL;
         free(borrar);
         return dato;
     }
