@@ -213,3 +213,17 @@ Sat Mar 28 02:40:30 AM UTC 2026:
  tests:  11|1
 total_score: 50/60
 b80a5f6
+Sat Mar 28 04:19:33 AM UTC 2026: 
+ list.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:109:13: error: ‘List’ {aka ‘struct List’} has no member named ‘prev’
+  109 |         list->prev = nodo;
+      |             ^~
+list.c:112:22: error: implicit declaration of function ‘create’ [-Wimplicit-function-declaration]
+  112 |         Node *nodo = create(data);
+      |                      ^~~~~~
+list.c:112:22: error: initialization of ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+6fcd3ad
