@@ -183,3 +183,22 @@ Sat Mar 28 01:34:54 AM UTC 2026:
  tests:  10|2
 total_score: 40/60
 e4da869
+Sat Mar 28 01:56:19 AM UTC 2026: 
+ list.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:84:17: error: invalid initializer
+   84 |     Node nodo = createNode(data);
+      |                 ^~~~~~~~~~
+list.c:85:9: error: invalid type argument of ‘->’ (have ‘Node’)
+   85 |     nodo->next = list->head;
+      |         ^~
+list.c:86:24: error: incompatible types when assigning to type ‘Node *’ from type ‘Node’
+   86 |     list->head->prev = nodo;
+      |                        ^~~~
+list.c:87:18: error: incompatible types when assigning to type ‘Node *’ from type ‘Node’
+   87 |     list->head = nodo;
+      |                  ^~~~
+c52cf4e
