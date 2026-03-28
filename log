@@ -156,3 +156,13 @@ Sat Mar 28 01:21:57 AM UTC 2026:
  tests:  6|3
 total_score: 30/60
 da1d690
+Sat Mar 28 01:30:47 AM UTC 2026: 
+ list.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘lastList’:
+list.c:67:21: error: ‘Node’ has no member named ‘tail’
+   67 |     if(list->current->tail == NULL) return NULL;
+      |                     ^~
+961461f
