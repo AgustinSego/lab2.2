@@ -53,7 +53,7 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-    if(list->current == NULL) return NULL;
+    if(list->current == NULL || list->current->next) return NULL;
     list->current = list->current->next;
     void *dato = list->current->data;
     return dato;
