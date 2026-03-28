@@ -166,3 +166,9 @@ list.c:67:21: error: ‘Node’ has no member named ‘tail’
    67 |     if(list->current->tail == NULL) return NULL;
       |                     ^~
 961461f
+Sat Mar 28 01:31:43 AM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|3
+total_score: 30/60
+fcc4850
